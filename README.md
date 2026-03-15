@@ -74,7 +74,7 @@
 Excel畫面<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Daily%20Quotes.png)
 
-SQL畫面(使用PGadmin操作)<br>
+SQL畫面<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
@@ -83,11 +83,13 @@ SQL畫面(使用PGadmin操作)<br>
 Excel畫面<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Stock%20Category.png)
 
-SQL畫面<br>
+SQL畫面(股票資料總表)<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_stock_info.png)
+
+SQL畫面，使用symbol= '1101' 操作結果<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
-股票資料總表<br>
-![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_stock_info.png)
+
 
 ## :computer:策略運算邏輯
 當策略運算所需的數據都爬蟲完成之後，便開始進行策略運算，步驟如下：<br>
