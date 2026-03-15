@@ -72,14 +72,14 @@
 
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Daily%20Quotes.png)
 
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
 依照上市櫃的股票分類建立分類大項，再以個股名稱建立資料夾，將資訊分不同的excel檔案擺放，每個個股的檔案欄位名稱與命名邏輯皆同，如下圖。
 
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Stock%20Category.png)
 
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/postgresql_stock_info.png)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_stock_info.png)
 
 ## :computer:策略運算邏輯
 當策略運算所需的數據都爬蟲完成之後，便開始進行策略運算，步驟如下：<br>
