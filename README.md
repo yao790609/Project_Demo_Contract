@@ -1,0 +1,223 @@
+:wave: 您好，我是對數據分析非常有興趣的姚廷諺，從2016年開始自學Python並應用在股票市場，鑽研的策略包含量化分析、技術分析、籌碼分析，用Python實現策略並進行回測與調整，目前有穩定運行的每日個股推薦系統，在此做系統展示，並描述突破追高策略，本報告分為兩個部分，第一為系統運算邏輯概述，第二為系統程式碼概述，其中所展示的程式碼並不為全部系統的所有程式碼，謝謝！
+
+# 目錄
+- [自身能力評估](#自身能力評估)
+- [分析工具](#分析工具)
+- [欲解決的問題](#欲解決的問題)
+- [一、系統運算邏輯概述(數據分析方法)](#一系統運算邏輯概述)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [系統流程圖](#building_construction系統流程圖)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [數據搜集](#spider數據搜集)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [數據清洗](#wrench數據清洗)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [資料庫設計與建置邏輯](#file_folder-資料庫設計與建置邏輯)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [策略運算邏輯](#computer策略運算邏輯)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [回測績效](#moneybag回測績效)<br>
+- [二、程式碼概述(數據分析及系統程式碼)](#二程式碼概述)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [個股報表產生程式碼](#chart_with_upwards_trend個股報表產生程式碼)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [選股系統主要程式碼](#rocket-選股系統主要程式碼)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [可視化圖表程式碼](#bar_chart-可視化圖表程式碼)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [串交易api自動交易](#moneybag串交易api自動交易)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [回測策略](#game_die回測策略)<br>
+  
+<br>
+ 
+# 自身能力評估
+1. Python後端程式能力：此系統的設計、開發與建置皆親自完成，包含數據爬蟲、資料庫設計與存取、數據量化計算、個股量化報表設計與產出、整體上市/上櫃推薦報表設計與產出，以及眾多策略的實現與可視化圖表及回測，都在做中學不斷提升程式能力。<br>
+2. Python數據分析能力：資料清洗、整併、分析與視覺化，熟悉NumPy、Pandas等資料處理，其中系統量化計算的演算法皆為自己所想所寫，利用每日的收盤數據做邏輯計算，並做視覺化呈現方便檢視結果與觀察價格行為。<br>
+3. 資料庫使用：熟悉PostgreSQL資料表設計、儲存、查詢以及Python資料調用，並使用pgAdmin做資料庫操作與管理。<br>
+4. 系統後台操作：工作需要協助客人規劃網站與系統，因此對於系統後台操作有經驗。<br>
+5. 跨部門合作：六年管理學系與七年專案管理師的背景，需與專案成員、供應商、客人共同合作與溝通，因此團隊合作、人際處理能力與溝通技巧佳。<br>
+6. 洞察力與創意：發揮創意思考價格行為，將所發想的指標實現並進行可視化，觀察價格的走勢與指標相互配合的運作情況，思考是否符合實務操作邏輯，並形成策略在實際投資中逐步調整。<br>
+
+
+# 分析工具
+● 數據分析語言：Python。<br>
+● 資料庫建置：市場原始資料儲存在Excel、個股量化報表儲存在CSV。<br>
+● 主要分析使用套件：pandas、numpy、talib(技術指標)。<br>
+● 主要視覺化套件：matplotlib(靜態)、mpl_finance、plotly(動態)。<br>
+● 數據操作演算法套件：report_func、daily_count_func、index_all(皆親自撰寫)。<br>
+
+# 欲解決的問題
+1. 上市/上櫃股數高達1900檔，該如何從中挑選有潛力的個股?<br>
+2. 法人、散戶、主力的多空角力都涵蓋在每日所揭露的資訊中，如何從雜亂無章的資訊中找出脈絡並形成策略，進入市場賺取報酬?<br>
+
+# 一、系統運算邏輯概述
+
+## :building_construction:系統流程圖
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E7%B3%BB%E7%B5%B1%E6%B5%81%E7%A8%8B%E5%9C%96_0415.png)
+
+## :spider:數據搜集
+爬蟲上市/上櫃所有個股數據，包含以下項目，在交易日的 14:30 系統會開始自動運作！<br>
+- 每日收盤行情<br>
+- 三大法人買賣超日報<br>
+- 融資融券餘額<br>
+- 融券借券賣出餘額<br>
+- 外資及陸資投資持股統計<br>
+- 大盤指數及各類股指數與交易金額<br>
+
+(以下為檔案範例，請點擊後下載查看)<br>
+
+●[信錦-每日行情](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E6%AF%8F%E6%97%A5%E8%A1%8C%E6%83%85.xls) 
+●[信錦-三大法人買賣超](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E8%B2%B7%E8%B3%A3%E8%B6%85.xls)
+●[信錦-融資融券彙總](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E8%B3%87%E8%9E%8D%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
+●[信錦-融券借券彙總](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E5%88%B8%E5%80%9F%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
+●[信錦-外資及陸資持股](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E5%A4%96%E8%B3%87%E5%8F%8A%E9%99%B8%E8%B3%87%E6%8C%81%E8%82%A1.xls)
+
+## :wrench:數據清洗
+每個檔案的欄位依照網站為主，主要做以下處理，儲存後檔案畫面如下圖。<br>
+1. 刪除不需要的欄位及其資訊<br>
+2. 統一日期格式<br>
+3. 轉換資料型態(由str轉換成float64)<br>
+
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Daily%20Quotes.png)
+
+## :file_folder: 資料庫設計與建置邏輯
+依照上市櫃的股票分類建立分類大項，再以個股名稱建立資料夾，將資訊分不同的excel檔案擺放，每個個股的檔案欄位名稱與命名邏輯皆同，如下圖。
+
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Stock%20Category.png)
+
+## :computer:策略運算邏輯
+當策略運算所需的數據都爬蟲完成之後，便開始進行策略運算，步驟如下：<br>
+1. 將所有股票做分類。<br>
+2. 利用當日個股數據計算各分類籌碼流向結果並計算籌碼流向指標(下圖圖一中藍色實線，標註為"Evaluation Index")，單一分類計算結果範例請見下方檔案"產業計算紀錄表"與圖一說明。<br>
+3. 所有分類計算完成後，將各分類籌碼流向指標分數由高到低做排名。(依據圖一Y座標值做為分數，進行分類總體排名，Y值越高則該群排名越前面)。<br>
+4. 計算個股月/周/日三級別報表的所有量化指標。<br>
+5. 定義強勢分類的名次範圍，先篩選出強勢分類，再根據所篩選出的分類篩選出符合策略條件的個股，個股計算結果範例請見下方檔案"信錦-day"、"信錦-week"與圖二說明。<br>
+6. 產出當日總體推薦個股報表。。<br>
+<br>
+
+●[產業計算紀錄表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E6%97%8F%E7%BE%A4%E8%B3%87%E9%87%91.xls)，說明：<br>
+1. 檔案中的開始日期(檔案中黃色背景欄位)若有值，即為自定義的籌碼開始進入波動區段，並藉由找出該區段的高低點，得知流進區間內的籌碼流進流出的情況，計算籌碼流向指標。<br>
+2. 檔案中的開始日期(檔案中黃色背景欄位)若無值，則尚未進入自定義的籌碼波動區段，因此該族群不會有任何動作，族群內的個股也不會被選上。<br>
+3. 運用matplotlib將指標以時間序列顯示如圖一。<br>
+
+●[信錦-day](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-day.csv)、[信錦-week](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-week.csv)，說明：<br>
+1. 每個個股都有獨立的計算報表，將力道指標及其他判斷指標的計算結果紀錄在各自的報表上，每張表欄位一致。<br>
+2. 力道指標(檔案中黃色背景欄位)若小於0，則有機會有一段漲幅，可以隔日開盤立即買進，有機會賺到正報酬。<br>
+3. 運用matplotlib將指標以及價格以時間序列顯示如圖二。<br>
+
+圖一：圖中示範族群於20240305-20240415、20240515-20240712進入籌碼波動區間，並藉由紅點與綠點定義出籌碼正在流進或流出，再藉以Y的值作為評價分數，將所有的族群以此方式做排名。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E7%94%A2%E6%A5%AD%E8%A9%95%E5%83%B9%E8%A7%A3%E8%AA%AA.jpg)
+
+圖二：圖中示範個股，藍色粗線為動能指標的連續動態值，可以見到藍色粗線值若低於0(紅色虛線"--"表示)，有機會有一段漲幅，便可以在小於0出現買入訊號時(可見圖中"Buy Signal")，於次交易日買進，有機會賺到正報酬。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%8B%E8%82%A1Demo.jpg)
+
+## :moneybag:回測績效
+以上為此選股系統的運算邏輯概述，策略為突破追高，回測績效如下表格，說明如下：<br>
+1. "回測交易筆數"為每日的選股系統推薦的個股數量。<br>
+2. "肉眼篩選筆數"為根據個人經驗及對技術線型的研究結果再次篩選後的筆數。<br>
+3. "實際利潤"為肉眼篩選筆數以一筆只買一張的情況計算損益值。<br>
+4. "同時投入最大金額"為因為股票有買有賣，同時間持有的所有股票成本最大值。<br>
+
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%9B%9E%E6%B8%AC%E7%B8%BE%E6%95%88.png)
+
+<br>
+
+# 二、程式碼概述
+## :chart_with_upwards_trend:個股報表產生程式碼
+主要程式碼參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/stock_report-listed.py<br>
+各項指標運算參考位置(僅列出基本指標程式碼)：https://github.com/yao790609/Project_Demo_DA/blob/master/index_all.py<br>
+
+說明：<br>
+stock_report-listed為對上市股票針對個股資訊產出個別報表，時間頻率為日/周/月三種報表，在此對數據再次做清洗及處理，再引入index_all內的function做計算，以下情況會對數據做處理：<br>
+1. 個股當日無交易但爬蟲有資料。<br>
+2. 去除個股數據不需要的欄位。<br>
+3. 對於設定區間外的資料做刪除。<br>
+   
+## :rocket: 選股系統主要程式碼
+參考位置(此為程式碼精簡版)：https://github.com/yao790609/Project_Demo_DA/blob/master/daily_info_update_listed.py<br>
+
+### 此程式碼包含如下功能
+ - 資料爬蟲<br>
+ - 檢查是否有新上市股票並自動建立資料庫及其數據檔案<br>
+ - 計算個股漲跌幅資訊<br>
+ - 計算個股日/周/月報表<br>
+ - 計算所有分類籌碼流向指標<br>
+ - 計算總體選股策略與推薦報表產出<br>
+
+### 系統詳細流程圖
+此流程圖紅字地方為系統產出檔案，以下檔案對應下方流程圖編號，若下方沒有則會在後面的流程說明中附上。 <br>
+編號1. [市盤](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%B8%82%E7%9B%A4.xlsx)<br>
+編號4. [漲跌幅報表-上市](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E6%BC%B2%E8%B7%8C%E5%B9%85%E5%A0%B1%E8%A1%A8-%E4%B8%8A%E5%B8%82.xlsx)<br>
+編號5. [個股計算開關-市](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%8B%E8%82%A1%E8%A8%88%E7%AE%97%E9%96%8B%E9%97%9C-%E5%B8%82.xlsx)<br>
+編號18. [股票分類-下載用(去除重複)-上市](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E8%82%A1%E7%A5%A8%E5%88%86%E9%A1%9E-%E4%B8%8B%E8%BC%89%E7%94%A8(%E5%8E%BB%E9%99%A4%E9%87%8D%E8%A4%87)-%E4%B8%8A%E5%B8%82.xls)<br>
+編號19. [新股清單-市](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E6%96%B0%E8%82%A1%E6%B8%85%E5%96%AE-%E5%B8%82.xlsx)<br>
+<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/System%20Flow%20Chart.jpg)
+
+### 在此系統中，載入下列四項自己編寫的Library
+daily_count_func / report_func / price_slope_daily / strategy_function<br>
+
+#### daily_count_func
+參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/index_all.py<br>
+作用：目的為提供下方report_func的計算函式，為免去每天都要重新產出個股報表耗費大量時間，因此將產出個股報表的指標Library-index_all內的function調整成根據前一天的結果，接續計算今日個股的日報表與周報表每個欄位的值。<br>
+
+#### report_func
+參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/report_func.py<br>
+作用：引入上方解說的Library-daily_count_func內的function計算今日指標數值。<br>
+
+#### price_slope_daily
+參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/price_slope_daily.py<br>
+作用：目的為計算每個候選股票在特定的參考指標下，該指標達到特定數值所累積的天數，以此比較個股的累積強度，最後產出總體比較報表。<br>
+考參考以下檔案。<br>
+
+●[上市總表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%B8%8A%E5%B8%82%E7%B8%BD%E8%A1%A8.xls)<br>
+
+#### strategy_function
+參考位置(第235行以下)：https://github.com/yao790609/Project_Demo_DA/blob/master/daily_report.py<br>
+作用：目的為將上市總表根據總體篩選策略標準，將符合標準的個股由指標大到小排列，最後產結果報表。<br>
+先產出上市結果報表，再產出強勢股列表，最後產出市候選，考參考以下檔案。<br>
+
+●[上市結果報表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%B8%8A%E5%B8%82%E7%B5%90%E6%9E%9C%E5%A0%B1%E8%A1%A8.xls)<br>
+●[強勢股列表-上市](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%BC%B7%E5%8B%A2%E8%82%A1%E5%88%97%E8%A1%A8-%E4%B8%8A%E5%B8%82.xls)<br>
+●[市候選](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%B8%82%E5%80%99%E9%81%B8.xlsx)<br>
+
+## :bar_chart: 可視化圖表程式碼
+程式碼參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/index_vision.py<br>
+作用：將各股每日報表視覺化作研究，觀察指標運行與價格行為的配合程度。<br>
+<br>
+
+圖一：光聖在 2024/01/29 以及 2024/03/05 突破布林通道且力道指標小於0，出現買入訊號，可以在次交易日進行購買，有機會賺取正報酬。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%85%89%E8%81%96.jpg)
+
+圖二：冠德在 2023/11/27 以及 2024/03/27 突破布林通道且力道指標小於0，出現買入訊號，可以在次交易日進行購買，有機會賺取正報酬。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%86%A0%E5%BE%B7.jpg)
+
+圖三：正淩在 2024/01/23 以及 2024/05/29 突破布林通道且力道指標小於0，出現買入訊號，可以在次交易日進行購買，有機會賺取正報酬。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E6%AD%A3%E6%B7%A9.jpg)
+
+## :moneybag:串交易API，自動交易
+程式碼參考位置：https://github.com/yao790609/Project_Demo_DA/blob/master/trade_API.py<br>
+
+此功能用兩個檔案進行管控，分別是"庫存表"及"候選表"，分別解說如下。<br>
+
+解釋：看過型態後，將候選股填入此檔案，並填入欲購買張數、購買價格以及盤中購買或是接近收盤購買，在每30秒的監測當中，若股價符合購買條件，便觸發購買機制。<br>
+檔案參考如下：<br>
+●[候選表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.xlsx)<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.jpg)<br>
+
+解釋：此檔案為 2023 年真實操作檔案擷取部分圖，當購買之後，會將購買日期、成本等資訊填入此檔案管控，每日會更新此檔案停損及停利點，再根據交易日的13:23~13:25的兩分鐘時間，進行每30秒股價偵測，若股價符合停損、停利標準，則觸發賣出機制。<br>
+檔案參考如下：<br>
+●[庫存表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.xlsx)<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.jpg)<br>
+
+通知機制：在進行購買及賣出之後，會請Line Notify機器人協助通知我買入/賣出哪支個股以及價位，如此便完成完整的交易流程，如下圖。<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Line%20Notify%20%E6%A9%9F%E5%99%A8%E4%BA%BA.png)<br>
+
+交易程式流程圖：<br>
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Trade%20Flow%20chart.jpg)
+
+# :game_die:回測策略
+參考位置_1：https://github.com/yao790609/Project_Demo_DA/blob/master/daily_report.py<br>
+參考位置_2：https://github.com/yao790609/Project_Demo_DA/blob/master/backtesting.py<br>
+作用：當個股的日報表與周報表產出之後，以此進行每日的候選股策略回測，我們利用daily_report.py的程式碼將候選表產生出來之後(產生報表的邏輯與上述相同)，再利用backtesting.py進行回測，此為第一階段的電腦篩選，並無經過個人經驗與技術型態過濾，因此只要候選股在隔天符合買入標準便觸發購買機制，最後產出如下檔案。<br>
+2016年是回測九年來虧損的一年；2020年是收益與往年平均差不多的一年，因此放上此兩年的檔案供參考。<br>
+
+●[交易清單-市2016](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822016.xlsx)<br>
+●[交易清單-市2020](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822020.xlsx)<br>
+
+說明：由下圖得知，2016年全年機器選擇筆數高達307筆，損失來到十萬，但經由人為判斷之後，筆數降為12筆，損失降至兩萬左右；而2020年全年機器選擇筆數高達407筆，雖整年獲利高達五十五萬，但在資金不夠的情況下並不允許如此執行，增加人為判斷之後，交易筆數降到65筆，獲利雖亦降至三十萬左右，但最大同時投入資金僅為二十五萬，是可以負荷的金額，因此在沒有辦法判斷型態的情況下，經由人為經驗判斷的過程還是需要的，雖然利潤可能因此降低，但卻更有效地挑選出有正獲利的筆數。
+
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/2016%E8%88%872020%E6%94%B6%E7%9B%8A.jpg)
+
+自 2016 年至今，我已在金融數據分析領域深耕超過八年，相信數據蘊藏著無限的價值，而真正的寶藏往往隱藏在細節之中。數據分析不僅是尋找答案的過程，更是透過縝密的邏輯與創意思維，挖掘關鍵資訊、發掘趨勢，進而轉化為可行的策略。未來，我期待持續精進自己的技能，運用數據驅動決策，協助企業在瞬息萬變的市場中找到最佳發展方向，感謝您的查閱，期待能加入貴司成為團隊的一份子。<br>
+
