@@ -72,10 +72,14 @@
 
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Daily%20Quotes.png)
 
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
+
 ## :file_folder: 資料庫設計與建置邏輯
 依照上市櫃的股票分類建立分類大項，再以個股名稱建立資料夾，將資訊分不同的excel檔案擺放，每個個股的檔案欄位名稱與命名邏輯皆同，如下圖。
 
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Stock%20Category.png)
+
+![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/postgresql_stock_info.png)
 
 ## :computer:策略運算邏輯
 當策略運算所需的數據都爬蟲完成之後，便開始進行策略運算，步驟如下：<br>
@@ -84,7 +88,7 @@
 3. 所有分類計算完成後，將各分類籌碼流向指標分數由高到低做排名。(依據圖一Y座標值做為分數，進行分類總體排名，Y值越高則該群排名越前面)。<br>
 4. 計算個股月/周/日三級別報表的所有量化指標。<br>
 5. 定義強勢分類的名次範圍，先篩選出強勢分類，再根據所篩選出的分類篩選出符合策略條件的個股，個股計算結果範例請見下方檔案"信錦-day"、"信錦-week"與圖二說明。<br>
-6. 產出當日總體推薦個股報表。。<br>
+6. 產出當日總體推薦個股報表。<br>
 <br>
 
 ●[產業計算紀錄表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E6%97%8F%E7%BE%A4%E8%B3%87%E9%87%91.xls)，說明：<br>
