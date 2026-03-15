@@ -78,7 +78,7 @@ SQL畫面(使用PGadmin操作)<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
-早期資料管理主要以 Excel 架構進行，依官方上市櫃股票分類建立產業大類，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中；各個股檔案的欄位名稱與命名邏輯皆維持一致，如下方 Excel 畫面所示。後續調整為 PostgreSQL 架構後，已調整為以 PostgreSQL 維護個股資訊資料表的方式進行管理。<br>
+早期資料管理主要以 Excel 架構進行，依官方上市櫃股票分類建立產業大類，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中；各股檔案的欄位名稱與命名邏輯皆維持一致，如下方 Excel 畫面所示。後續調整為 PostgreSQL 架構後，已調整為以 PostgreSQL 維護個股資訊資料表的方式進行管理。<br>
 Excel畫面<br><br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Stock%20Category.png)
 
