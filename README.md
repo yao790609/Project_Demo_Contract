@@ -70,8 +70,10 @@
 2. 統一日期格式<br>
 3. 轉換資料型態(由str轉換成float64)<br>
 
+Excel畫面<br>
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Daily%20Quotes.png)
 
+SQL畫面(使用PGadmin操作)<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
