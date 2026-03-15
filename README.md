@@ -1,6 +1,5 @@
 :wave: 您好，我是對資料分析與系統應用具有高度興趣的姚廷諺。自 2016 年起，我開始自學 Python，並逐步應用於資料整理、分析、邏輯設計與系統建置，累積資料清理、整併、儲存、報表設計與視覺化呈現等經驗。早期資料管理主要以 Excel 建立與維護，並透過 Python 進行資料讀寫與分析，視覺化則以 matplotlib 為主；隨著資料量與分析需求增加，目前已調整為以 PostgreSQL 作為主要資料儲存架構，並搭配 Python 進行資料擷取、查詢、整併與分析，部分成果則透過 Grafana 進行 dashboard 呈現。<br>
-
-本作品集主要展示我如何運用 Python、Excel、PostgreSQL 與 Grafana 建置資料處理與分析流程，內容包含系統運算邏輯概述，以及系統程式架構與實作說明。文中所展示之程式碼並非完整系統全部內容，主要用於說明整體設計思路與相關技術能力。
+作品集主要展示我如何運用 Python、Excel、PostgreSQL 與 Grafana 建置資料處理與分析流程，內容包含系統運算邏輯概述，以及系統程式架構與實作說明。附件所提供之檔案，主要為早期以 Excel 作為資料管理架構時所保存的市場原始資料，以及透過 Python 計算後產出的結果報表；後續系統已調整為以 PostgreSQL 搭配 SQL 指令進行資料處理與結果產出，因此現行版本較無相同形式之結果報表檔案可供附上。文中所展示之程式碼並非完整系統全部內容，主要用於說明整體設計思路與相關技術能力。<br>
 
 # 目錄
 - [自身能力評估](#自身能力評估)
@@ -45,7 +44,7 @@
 # 一、系統運算邏輯概述
 
 ## :building_construction:系統流程圖
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E7%B3%BB%E7%B5%B1%E6%B5%81%E7%A8%8B%E5%9C%96_0415.png)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E7%B3%BB%E7%B5%B1%E6%B5%81%E7%A8%8B%E5%9C%96_0415.png)
 
 ## :spider:數據搜集
 爬蟲上市/上櫃所有個股數據，包含以下項目，在交易日的 14:30 系統會開始自動運作！<br>
@@ -56,13 +55,13 @@
 - 外資及陸資投資持股統計<br>
 - 大盤指數及各類股指數與交易金額<br>
 
-(以下為檔案範例，請點擊後下載查看)<br>
+(以下為檔案範例，請點擊後下載查看，此為以 Excel 為管理架構時的原始資料檔案)<br>
 
-●[信錦-每日行情](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E6%AF%8F%E6%97%A5%E8%A1%8C%E6%83%85.xls) 
-●[信錦-三大法人買賣超](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E8%B2%B7%E8%B3%A3%E8%B6%85.xls)
-●[信錦-融資融券彙總](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E8%B3%87%E8%9E%8D%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
-●[信錦-融券借券彙總](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E5%88%B8%E5%80%9F%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
-●[信錦-外資及陸資持股](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E5%A4%96%E8%B3%87%E5%8F%8A%E9%99%B8%E8%B3%87%E6%8C%81%E8%82%A1.xls)
+●[信錦-每日行情](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E6%AF%8F%E6%97%A5%E8%A1%8C%E6%83%85.xls) 
+●[信錦-三大法人買賣超](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E8%B2%B7%E8%B3%A3%E8%B6%85.xls)
+●[信錦-融資融券彙總](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E8%B3%87%E8%9E%8D%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
+●[信錦-融券借券彙總](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E8%9E%8D%E5%88%B8%E5%80%9F%E5%88%B8%E5%BD%99%E7%B8%BD.xls)
+●[信錦-外資及陸資持股](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E5%A4%96%E8%B3%87%E5%8F%8A%E9%99%B8%E8%B3%87%E6%8C%81%E8%82%A1.xls)
 
 ## :wrench:數據清洗
 每個檔案的欄位依照網站為主，主要做以下處理，儲存後檔案畫面如下圖。<br>
@@ -71,16 +70,18 @@
 3. 轉換資料型態(由str轉換成float64)<br>
 
 Excel畫面<br>
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Daily%20Quotes.png)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Daily%20Quotes.png)
 
 SQL畫面(使用PGadmin操作)<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
-依照上市櫃的股票分類建立分類大項，再以個股名稱建立資料夾，將資訊分不同的excel檔案擺放，每個個股的檔案欄位名稱與命名邏輯皆同，如下圖。
+在 Excel 管理架構下，依照上市櫃的股票分類建立分類大項，再以個股名稱建立資料夾，將資訊分不同的 Excel 檔案擺放，每個個股的檔案欄位名稱與命名邏輯皆同，如下圖Excel畫面；而 PostgreSQL 管理架構，則維護個股資訊的表即可。
 
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Stock%20Category.png)
+Excel畫面<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Stock%20Category.png)
 
+SQL畫面(使用PGadmin操作)<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_stock_info.png)
 
 ## :computer:策略運算邏輯
