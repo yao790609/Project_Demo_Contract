@@ -57,7 +57,7 @@
 - 外資及陸資投資持股統計<br>
 - 大盤指數及各類股指數與交易金額<br>
 
-(以下為檔案範例，請點擊後下載查看，此為以 Excel 為管理架構時的原始資料檔案)<br>
+(以下為檔案範例，請點擊後下載查看，此為早期以 Excel 為管理架構時的原始資料檔案)<br>
 
 ●[信錦-每日行情](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E6%AF%8F%E6%97%A5%E8%A1%8C%E6%83%85.xls) 
 ●[信錦-三大法人買賣超](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BF%A1%E9%8C%A6-%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E8%B2%B7%E8%B3%A3%E8%B6%85.xls)
