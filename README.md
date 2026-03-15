@@ -78,11 +78,15 @@ SQL畫面(使用PGadmin操作)<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
-早期資料管理主要以 Excel 架構進行，依官方上市櫃股票分類建立產業大類，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中；各股檔案的欄位名稱與命名邏輯皆維持一致，如下方 Excel 畫面所示。後續調整為 PostgreSQL 架構後，已調整為以 PostgreSQL 維護個股資訊資料表的方式進行管理。<br>
-Excel畫面<br><br>
+早期資料管理主要以 Excel 架構進行，依上市櫃股票分類建立產業大項，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中；各個股檔案的欄位名稱與命名邏輯皆維持一致，如下方 Excel 畫面所示，以每日收盤資料為例，Excel 架構下需為每一檔股票各自建立資料檔案。後續調整為 PostgreSQL 架構後，則改以資料表集中管理各項爬蟲數據，每個數據項目僅需維護一張資料表，並將所有股票資料統一存放於表中，再透過 symbol（股票代號）進行查詢即可；同時維護一張所有股票的資料總表方便查詢該股屬於哪個產業以及哪個市場及其他個股基本資訊。<br><br>
+
+Excel畫面<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Stock%20Category.png)
 
-SQL畫面(使用PGadmin操作)<br>
+SQL畫面<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
+
+股票資料總表<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_stock_info.png)
 
 ## :computer:策略運算邏輯
