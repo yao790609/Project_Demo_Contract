@@ -159,7 +159,7 @@ daily_count_func / report_func / price_slope_daily / strategy_function<br>
 
 #### report_func
 參考位置：https://github.com/yao790609/Project_Demo_Contract/blob/master/report_func.py<br>
-作用：引入上方解說的Library-daily_count_func內的function計算今日指標數值。<br>
+作用：引入上方解說的 Library-daily_count_func 內的 function 計算今日指標數值。<br>
 
 #### price_slope_daily
 參考位置：https://github.com/yao790609/Project_Demo_Contract/blob/master/price_slope_daily.py<br>
