@@ -180,7 +180,7 @@ daily_count_func / report_func / price_slope_daily / strategy_function<br>
 ## :bar_chart: 可視化圖表程式碼
 程式碼參考位置：https://github.com/yao790609/Project_Demo_Contract/blob/master/index_vision.py<br>
 1. 由於 matplotlib 的呈現方式以單張靜態圖表為主，較適合用於說明資料分析結果，因此本區域將以 matplotlib 圖表作為說明重點，藉以展示資料經整理、計算與視覺化後的呈現方式，以及各項指標與股價之間的對應關係。<br>
-2. 相較之下，Grafana 屬於 web-based dashboard 服務，除可將資料以圖表方式整合呈現外，亦可依需求彈性調整查詢條件，例如股價資訊查詢區間、股票代號及其他相關觀察欄位，便於即時掌握個股狀況與資料變化，因此，本頁所附之 Grafana 圖面僅作為示意用途，主要用於說明整體視覺化架構；若有面試機會，我可進一步展示 Grafana 的實際操作方式、查詢邏輯與互動效果。<br>
+2. 相較之下，Grafana 屬於 web-based dashboard 服務，除可將資料以圖表方式整合呈現外，亦可依需求彈性調整查詢條件，例如股價資訊查詢區間、股票代號及其他相關觀察欄位，便於即時掌握個股狀況與資料變化，因此，本頁所附之 Grafana 圖面僅作為示意用途；若有面試機會，我可進一步展示 Grafana 的實際操作方式、查詢邏輯與互動效果。<br>
 <br>
 
 圖一：光聖在 2024/01/29 以及 2024/03/05 突破布林通道且力道指標小於0，出現買入訊號，可以在次交易日進行購買，有機會賺取正報酬。<br>
