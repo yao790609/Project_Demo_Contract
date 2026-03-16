@@ -1,7 +1,7 @@
 :wave::wave::wave: <br>
-您好，我是對資料分析與系統應用具有高度興趣的姚廷諺。自 2016 年起，我開始自學 Python，並逐步應用於資料整理、分析、邏輯設計與系統建置，累積資料清理、整併、儲存、報表設計與視覺化呈現等經驗。早期資料管理主要以 Excel 建立與維護，並透過 Python 進行資料讀寫與分析，視覺化則以 matplotlib 為主；隨著資料量與分析需求增加，目前已調整為以 PostgreSQL 作為主要資料儲存架構，並搭配 Python 進行資料擷取、查詢、整併與分析，部分成果則透過 Grafana 進行 dashboard 呈現。<br>
+您好，我是對數據分析有濃厚興趣的姚廷諺。從 2016 年起，我開始自學 Python，應用於數據整理、分析、邏輯設計與系統建置，逐步累積資料清理、整併、儲存、報表設計與視覺化呈現等經驗。早期數據管理主要以 Excel 建立與維護，並透過 Python 進行數據讀寫與分析，視覺化則以 matplotlib 為主；隨著數據量與分析需求增加，目前已調整為以 PostgreSQL 作為主要數據儲存架構，並搭配 Python 進行資料擷取、查詢、整併與分析，視覺化除了 matplotlib 之外，也透過 Grafana dashboard 呈現。<br>
 <br>
-作品集主要展示我如何運用 Python、Excel、PostgreSQL 與 Grafana 建置資料處理與分析流程，內容包含系統運算邏輯概述，以及系統程式架構與實作說明。附件所提供之檔案，主要為早期以 Excel 作為資料管理架構時所保存的市場原始資料，以及透過 Python 計算後產出的結果報表；後續系統已調整為以 PostgreSQL 搭配 SQL 指令進行資料處理與結果產出，因此現行版本較無相同形式之結果報表檔案可供附上。文中所展示之程式碼並非完整系統全部內容，主要用於說明整體設計思路與相關技術能力。<br>
+本作品集主要展示我如何運用 Python、Excel、PostgreSQL 與 Grafana 建置資料處理與分析流程，內容包含系統運算邏輯概述，以及系統程式架構與實作說明。文中附件所提供之檔案，主要為早期以 Excel 作為資料管理架構時所保存的市場原始資料，以及透過 Python 計算後產出的結果報表；後續系統因調整為以 PostgreSQL 搭配 SQL 指令進行篩選結果產出，因此現行版本較無相同形式之報表檔案可供附上。文中所展示之程式碼並非完整系統全部內容，主要用於說明整體設計思路與相關技術能力。<br>
 
 # 目錄
 - [自身能力評估](#自身能力評估)
@@ -23,19 +23,19 @@
 <br>
  
 # 自身能力評估
-1. Python 與資料處理能力：可獨立使用 Python 進行資料擷取、資料清洗、整併、資料庫存取、報表設計與產出等流程，具備從資料蒐集、處理到結果輸出的完整實作經驗。<br>
-2. 資料分析與視覺化能力：熟悉使用 Python 進行資料清洗、分析與視覺化，並具備 NumPy、Pandas 等資料處理工具實務經驗。早期以 matplotlib 進行圖表呈現，後續配合資料架構調整，部分成果已改以 Grafana 進行 dashboard 視覺化展示，以提升資料檢視與應用效率。<br>
-3. Excel 與報表製作能力：熟悉 Excel 資料整理、函數應用（如 VLOOKUP）、報表彙整與圖表製作，能依需求將資料整理為清楚易讀之表格、圖表與簡報素材，協助後續溝通與應用。早期資料管理亦主要以 Excel 建立與維護，具備以 Python 操作 Excel 進行資料讀寫、整理與分析之經驗。<br>
-4. 資料庫操作能力：熟悉 PostgreSQL 資料表設計、資料儲存、查詢與維護，並能透過 Python 連接資料庫進行資料擷取與應用，同時使用 pgAdmin 進行資料庫操作與管理。隨著資料量與分析需求增加，已將原先以 Excel 為主的資料管理流程調整為以 PostgreSQL 作為主要資料儲存架構。<br>
+1. Python 與數據處理能力：可獨立使用 Python 進行數據擷取、數據清洗、整併、資料庫存取、報表設計與產出等流程，具備從資料蒐集、處理到結果輸出的完整實作經驗。<br>
+2. 數據分析與視覺化能力：熟悉使用 Python 進行數據清洗、分析與視覺化，並具備 NumPy、Pandas 等資料處理工具實務經驗。早期以 matplotlib 進行圖表呈現，後續配合資料架構調整，部分成果已改以 Grafana dashboard 視覺化展示，以提升資料檢視與應用效率。<br>
+3. Excel 與報表製作能力：熟悉 Excel 資料整理、函數應用（如 VLOOKUP）、報表彙整與圖表製作，能依需求將資料整理為清楚易讀之表格、圖表與簡報素材，協助後續溝通與應用；早期資料管理亦主要以 Excel 建立與維護，具備以 Python 操作 Excel 進行資料讀寫、整理與分析經驗。<br>
+4. 資料庫操作能力：熟悉 PostgreSQL 資料表設計、數據儲存、查詢與維護，並能透過 Python 連接資料庫進行資料擷取與應用，同時使用 pgAdmin 進行資料庫操作與管理，隨著資料量與分析需求增加，已將原先以 Excel 為主的資料管理流程調整為以 PostgreSQL 作為主要資料儲存架構。<br>
 5. 系統與後台操作經驗：具網站與系統規劃相關經驗，因工作需協助客戶進行系統設計、功能確認與流程測試，對於系統流程理解、後台操作及功能測試具備實務基礎。<br>
 6. 跨部門協作與溝通能力：具七年專案管理經驗，過程中需與專案成員、供應商及客戶進行需求確認、進度追蹤與問題協調，因此具備良好的跨部門合作、溝通協調與執行能力。<br>
-7. 邏輯分析、資料品質控管與問題解決能力：能針對資料與實務需求進行邏輯設計、結果驗證與流程優化，並重視資料正確性、一致性與作業時效，持續提升資料應用與報表產出的品質。<br>
+7. 邏輯分析、數據品質控管與問題解決能力：能針對數據與實務需求進行邏輯設計、結果驗證與流程優化，並重視資料正確性、一致性與作業時效，持續提升資料應用與報表產出的品質。<br>
 
 # 分析工具
 ● 數據分析語言：Python。<br>
-● 資料儲存架構：早期市場原始資料主要儲存在 Excel，個股量化報表儲存在 CSV；隨著資料量與分析需求增加，目前已調整為以 PostgreSQL 作為主要資料儲存與查詢架構。<br>
-● 主要分析使用套件：pandas、numpy、talib（技術指標）。<br>
-● 主要視覺化工具：早期以 matplotlib（靜態）、mpl_finance 進行圖表呈現；目前部分分析成果已改以 Grafana 進行 dashboard 視覺化展示。<br>
+● 資料儲存架構：早期市場原始數據主要儲存在 Excel，個股量化報表儲存在 CSV；目前調整為以 PostgreSQL 作為主要數據儲存與查詢架構。<br>
+● 主要使用套件：pandas、numpy、talib（技術指標）。<br>
+● 主要視覺化工具：早期以 matplotlib（靜態）、mpl_finance 進行圖表呈現；目前部分分析成果改以 Grafana dashboard 視覺化展示。<br>
 ● 數據操作與分析模組：report_func、daily_count_func、index_all（皆為親自撰寫）。<br>
 
 # 欲解決的問題
@@ -68,7 +68,7 @@
 每個檔案的欄位依照網站為主，主要做以下處理，儲存後檔案畫面如下圖。<br>
 1. 刪除不需要的欄位及其資訊<br>
 2. 統一日期格式<br>
-3. 轉換資料型態(由str轉換成float64)<br>
+3. 轉換數據型態(由str轉換成float64)<br>
 
 Excel管理架構<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Daily%20Quotes.png)
@@ -77,7 +77,7 @@ SQL管理架構<br>
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/postgresql_1101_daily_info.png)
 
 ## :file_folder: 資料庫設計與建置邏輯
-1. 早期資料管理主要以 Excel 架構進行，依上市櫃股票分類建立產業大項，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中；每個個股檔案的欄位名稱與命名邏輯皆維持一致，如下方 Excel 畫面所示，以每日開高低收數據為例，Excel 架構下需為每一檔股票各自建立名為 "股名-每日行情" 檔案紀錄。<br>
+1. 早期數據管理主要以 Excel 架構進行，依上市櫃股票分類建立產業大項，再依個股名稱建立資料夾，將相關資訊分別存放於不同的 Excel 檔案中，如下方 Excel 畫面所示，以每日開高低收數據為例，Excel 架構下需為每一檔股票各自建立名為 "股名-每日行情" 檔案紀錄。<br>
 2. 後續調整為 PostgreSQL 架構後，則改以資料表集中管理各項爬蟲數據，每個資料項目僅需維護一張資料表，並將所有股票資料統一存放於表中，再透過 symbol（股票代號）進行查詢即可；同時維護一張所有股票的資料總表方便查詢該股屬於哪個產業以及哪個市場及其他個股基本資訊。<br><br>
 
 Excel管理架構<br>
@@ -203,30 +203,30 @@ daily_count_func / report_func / price_slope_daily / strategy_function<br>
 
 解釋：看過型態後，將候選股填入此檔案，並填入欲購買張數、購買價格以及盤中購買或是接近收盤購買，在每30秒的監測當中，若股價符合購買條件，便觸發購買機制。<br>
 檔案參考如下：<br>
-●[候選表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.xlsx)<br>
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.jpg)<br>
+●[候選表](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.xlsx)<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.jpg)<br>
 
 解釋：此檔案為 2023 年真實操作檔案擷取部分圖，當購買之後，會將購買日期、成本等資訊填入此檔案管控，每日會更新此檔案停損及停利點，再根據交易日的13:23~13:25的兩分鐘時間，進行每30秒股價偵測，若股價符合停損、停利標準，則觸發賣出機制。<br>
 檔案參考如下：<br>
-●[庫存表](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.xlsx)<br>
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.jpg)<br>
+●[庫存表](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.xlsx)<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.jpg)<br>
 
-通知機制：在進行購買及賣出之後，會請Line Notify機器人協助通知我買入/賣出哪支個股以及價位，如此便完成完整的交易流程，如下圖。<br>
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Line%20Notify%20%E6%A9%9F%E5%99%A8%E4%BA%BA.png)<br>
+通知機制：在進行購買及賣出之後，會請 Line Notify 機器人協助通知我買入/賣出哪支個股以及價位，如此便完成完整的交易流程，如下圖。<br>
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Line%20Notify%20%E6%A9%9F%E5%99%A8%E4%BA%BA.png)<br>
 
 交易程式流程圖：<br>
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/Trade%20Flow%20chart.jpg)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Trade%20Flow%20chart.jpg)
 
 # :game_die:回測策略
-參考位置_1：https://github.com/yao790609/Project_Demo_DA/blob/master/daily_report.py<br>
-參考位置_2：https://github.com/yao790609/Project_Demo_DA/blob/master/backtesting.py<br>
-作用：當個股的日報表與周報表產出之後，以此進行每日的候選股策略回測，我們利用daily_report.py的程式碼將候選表產生出來之後(產生報表的邏輯與上述相同)，再利用backtesting.py進行回測，此為第一階段的電腦篩選，並無經過個人經驗與技術型態過濾，因此只要候選股在隔天符合買入標準便觸發購買機制，最後產出如下檔案。<br>
-2016年是回測九年來虧損的一年；2020年是收益與往年平均差不多的一年，因此放上此兩年的檔案供參考。<br>
+參考位置_1：https://github.com/yao790609/Project_Demo_Contract/blob/master/daily_report.py<br>
+參考位置_2：https://github.com/yao790609/Project_Demo_Contract/blob/master/backtesting.py<br>
+作用：當個股的日報表與周報表產出之後，以此進行每日的候選股策略回測，我們利用 daily_report.py 的程式碼將候選表產生出來之後(產生報表的邏輯與上述相同)，再利用 backtesting.p y進行回測，此為第一階段的電腦篩選，並無經過個人經驗與技術型態過濾，因此只要候選股在隔天符合買入標準便觸發購買機制，最後產出如下檔案。<br>
+2016 年是回測九年來虧損的一年； 2020 年是收益與往年平均差不多的一年，因此放上此兩年的檔案供參考。<br>
 
 ●[交易清單-市2016](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822016.xlsx)<br>
 ●[交易清單-市2020](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822020.xlsx)<br>
 
-說明：由下圖得知，2016年全年機器選擇筆數高達307筆，損失來到十萬，但經由人為判斷之後，筆數降為12筆，損失降至兩萬左右；而2020年全年機器選擇筆數高達407筆，雖整年獲利高達五十五萬，但在資金不夠的情況下並不允許如此執行，增加人為判斷之後，交易筆數降到65筆，獲利雖亦降至三十萬左右，但最大同時投入資金僅為二十五萬，是可以負荷的金額，因此在沒有辦法判斷型態的情況下，經由人為經驗判斷的過程還是需要的，雖然利潤可能因此降低，但卻更有效地挑選出有正獲利的筆數。
+說明：由下圖得知， 2016 年全年機器選擇筆數高達 307 筆，損失來到十萬，但經由人為判斷之後，筆數降為 12 筆，損失降至兩萬左右；而 2020 年全年機器選擇筆數高達  407筆，雖整年獲利高達五十五萬，但在資金不夠的情況下並不允許如此執行，增加人為判斷之後，交易筆數降到 65 筆，獲利雖亦降至三十萬左右，但最大同時投入資金僅為二十五萬，是可以負荷的金額，因此在沒有辦法判斷型態的情況下，經由人為經驗判斷的過程還是需要的，雖然利潤可能因此降低，但卻更有效地挑選出有正獲利的筆數。
 
 ![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/2016%E8%88%872020%E6%94%B6%E7%9B%8A.jpg)
 
