@@ -48,7 +48,7 @@
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E7%B3%BB%E7%B5%B1%E6%B5%81%E7%A8%8B%E5%9C%96_0415.png)
 
 ## :spider:數據搜集
-爬蟲上市/上櫃所有個股數據，包含以下項目，在交易日的 14:30 系統會開始自動運作！<br>
+爬蟲上市/上櫃所有個股數據，包含以下項目，在交易日的 14:35 系統會開始自動運作！<br>
 - 每日收盤行情<br>
 - 三大法人買賣超日報<br>
 - 融資融券餘額<br>
