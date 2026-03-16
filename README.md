@@ -6,7 +6,7 @@
 # 目錄
 - [自身能力評估](#自身能力評估)
 - [分析工具](#分析工具)
-- [欲解決的問題](#欲解決的問題)
+- [專案目標](#專案目標)
 - [一、系統運算邏輯概述(資料分析方法)](#一系統運算邏輯概述)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [系統流程圖](#building_construction系統流程圖)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [資料搜集](#spider資料搜集)<br>
@@ -38,7 +38,7 @@
 ● 主要視覺化工具：matplotlib、mpl_finance、Grafana dashboard。<br>
 ● 資料操作與分析模組：report_func、daily_count_func、index_all（皆為親自撰寫）。<br>
 
-# 欲解決的問題
+# 專案目標
 1. 上市/上櫃股數高達1900檔，該如何從中挑選有潛力的個股?<br>
 2. 法人、散戶與市場資金行為皆反映於每日揭露資訊中，如何從大量且分散的資料中整理出可供分析與判讀的邏輯脈絡？<br>
 
