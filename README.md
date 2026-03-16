@@ -32,11 +32,11 @@
 7. 邏輯分析、資料品質控管與問題解決能力：能針對資料與實務需求進行邏輯設計、結果驗證與流程優化，並重視資料正確性、一致性與作業時效，持續提升資料應用與報表產出的品質。<br>
 
 # 分析工具
-● 資料分析語言：Python、SQL。<br>
-● 資料儲存架構：早期市場原始資料主要儲存在 Excel，個股量化報表儲存在 CSV；目前調整為以 PostgreSQL 作為主要資料儲存與查詢架構。<br>
-● 主要使用套件：pandas、numpy、talib（技術指標）。<br>
-● 主要視覺化工具：matplotlib、mpl_finance、Grafana dashboard。<br>
-● 資料操作與分析模組：report_func、daily_count_func、index_all（皆為親自撰寫）。<br>
+1. 資料分析語言：Python、SQL。<br>
+2. 資料儲存架構：早期市場原始資料主要儲存在 Excel，個股量化報表儲存在 CSV；目前調整為以 PostgreSQL 作為主要資料儲存與查詢架構。<br>
+3. 主要使用套件：pandas、numpy、talib（技術指標）。<br>
+4. 主要視覺化工具：matplotlib、mpl_finance、Grafana dashboard。<br>
+5. 資料操作與分析模組：report_func、daily_count_func、index_all（皆為親自撰寫）。<br>
 
 # 專案目標
 1. 上市/上櫃股數高達1900檔，該如何從中挑選有潛力的個股?<br>
