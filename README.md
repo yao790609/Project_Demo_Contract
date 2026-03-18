@@ -223,12 +223,12 @@ daily_count_func / report_func / price_slope_daily / strategy_function<br>
 作用：當個股的日報表與周報表產出之後，以此進行每日的候選股策略回測，我們利用 daily_report.py 的程式碼將候選表產生出來之後(產生報表的邏輯與上述相同)，再利用 backtesting.p y進行回測，此為第一階段的電腦篩選，並無經過個人經驗與技術型態過濾，因此只要候選股在隔天符合買入標準便觸發購買機制，最後產出如下檔案。<br>
 2016 年是回測九年來虧損的一年； 2020 年是收益與往年平均差不多的一年，因此放上此兩年的檔案供參考。<br>
 
-●[交易清單-市2016](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822016.xlsx)<br>
-●[交易清單-市2020](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822020.xlsx)<br>
+●[交易清單-市2016](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822016.xlsx)<br>
+●[交易清單-市2020](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E4%BA%A4%E6%98%93%E6%B8%85%E5%96%AE-%E5%B8%822020.xlsx)<br>
 
 說明：由下圖得知， 2016 年全年機器選擇筆數高達 307 筆，損失來到十萬，但經由人為判斷之後，筆數降為 12 筆，損失降至兩萬左右；而 2020 年全年機器選擇筆數高達  407筆，雖整年獲利高達五十五萬，但在資金不夠的情況下並不允許如此執行，增加人為判斷之後，交易筆數降到 65 筆，獲利雖亦降至三十萬左右，但最大同時投入資金僅為二十五萬，是可以負荷的金額，因此在沒有辦法判斷型態的情況下，經由人為經驗判斷的過程還是需要的，雖然利潤可能因此降低，但卻更有效地挑選出有正獲利的筆數。
 
-![image](https://github.com/yao790609/Project_Demo_DA/blob/master/Demo%20Files/2016%E8%88%872020%E6%94%B6%E7%9B%8A.jpg)
+![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/2016%E8%88%872020%E6%94%B6%E7%9B%8A.jpg)
 
 自 2016 年至今，我已在金融資料分析領域深耕超過八年，相信資料蘊藏著無限的價值，而真正的寶藏往往隱藏在細節之中。資料分析不僅是尋找答案的過程，更是透過縝密的邏輯與創意思維，挖掘關鍵資訊、發掘趨勢，進而轉化為可行的策略。未來，我期待持續精進自己的技能，運用資料驅動決策，協助企業在瞬息萬變的市場中找到最佳發展方向，感謝您的查閱，期待能加入貴司成為團隊的一份子。<br>
 
