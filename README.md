@@ -17,7 +17,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [個股報表產生程式碼](#chart_with_upwards_trend個股報表產生程式碼)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [選股系統主要程式碼](#rocket-選股系統主要程式碼)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [可視化圖表程式碼](#bar_chart-可視化圖表程式碼)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [串交易api自動交易](#moneybag串交易api自動交易)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [回測策略](#game_die回測策略)<br>
   
 <br>
@@ -194,28 +193,6 @@ daily_count_func / report_func / price_slope_daily / strategy_function<br>
 
 圖四： Grafana 視覺化圖表展示
 ![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/grafana_demo.png)
-
-
-## :moneybag:串交易API，自動交易
-程式碼參考位置：https://github.com/yao790609/Project_Demo_Contract/blob/master/trade_API.py<br>
-
-此功能用兩個檔案進行管控，分別是"庫存表"及"候選表"，分別解說如下。<br>
-
-解釋：看過型態後，將候選股填入此檔案，並填入欲購買張數、購買價格以及盤中購買或是接近收盤購買，在每30秒的監測當中，若股價符合購買條件，便觸發購買機制。<br>
-檔案參考如下：<br>
-●[候選表](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.xlsx)<br>
-![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%80%99%E9%81%B8%E8%A1%A8.jpg)<br>
-
-解釋：此檔案為 2023 年真實操作檔案擷取部分圖，當購買之後，會將購買日期、成本等資訊填入此檔案管控，每日會更新此檔案停損及停利點，再根據交易日的13:23~13:25的兩分鐘時間，進行每30秒股價偵測，若股價符合停損、停利標準，則觸發賣出機制。<br>
-檔案參考如下：<br>
-●[庫存表](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.xlsx)<br>
-![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/%E5%BA%AB%E5%AD%98%E8%A1%A8.jpg)<br>
-
-通知機制：在進行購買及賣出之後，會請 Line Notify 機器人協助通知我買入/賣出哪支個股以及價位，如此便完成完整的交易流程，如下圖。<br>
-![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Line%20Notify%20%E6%A9%9F%E5%99%A8%E4%BA%BA.png)<br>
-
-交易程式流程圖：<br>
-![image](https://github.com/yao790609/Project_Demo_Contract/blob/master/Demo%20Files/Trade%20Flow%20chart.jpg)
 
 # :game_die:回測策略
 參考位置_1：https://github.com/yao790609/Project_Demo_Contract/blob/master/daily_report.py<br>
